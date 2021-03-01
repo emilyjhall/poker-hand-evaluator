@@ -27,15 +27,33 @@ public class DeckTest {
         suits.add('S');
 
         //then
+        boolean cardIsUnique = true;
         for (int rank = 2; rank < 15; rank++){
             for (Character c : suits){
-                Card cardToCheck = deck.getCard();
+                Card cardToCheck = deck.drawCard();
                 if(cardToCheck.getSuit() == c && cardToCheck.getRank() == rank) {
-
+                    continue;
+                } else {
+                    cardIsUnique = false;
                 }
             }
         }
-        assertThat(deck.getSuitSize());
+        assertThat(cardIsUnique).isTrue();
     }
 
+    @Test
+    public void CheckDeckHasBeenShuffled() {
+        Deck beforeShuffle = new Deck();
+        Deck afterShuffle = beforeShuffle.shuffleDeck(beforeShuffle);
+        boolean isShuffled = false;
+
+        for (int card = 0; card < beforeShuffle.getDeckSize(); card++ ) {
+            if (beforeShuffle.drawCard().getRank() != afterShuffle.drawCard().getRank() || beforeShuffle.drawCard().getSuit() != afterShuffle.drawCard().getSuit() ) {
+                isShuffled = true;
+                break;
+            }
+        }
+
+        assertThat(isShuffled).isTrue();
+    }
 }
