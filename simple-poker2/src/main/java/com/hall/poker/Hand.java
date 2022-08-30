@@ -30,14 +30,18 @@ public class Hand {
             return "Four of a Kind";
         } else if (this.threeOfAKind() == true) {
             return "Three of a Kind";
+        } else if (this.twoPair() == true) {
+            return "Two Pair";
         } else {
-            return "None";
+            return "High Card";
         }
     }
 
     private boolean royalFlush() {
-        if (hand[0].getSuit() == hand[1].getSuit() && hand[0].getSuit() == hand[2].getSuit() && hand[0].getSuit() == hand[3].getSuit() && hand[0].getSuit() == hand[4].getSuit()) {
-            if  (hand[0].getRank() == 0 && hand[1].getRank() == 9 && hand[2].getRank() == 10 && hand[3].getRank() == 11 && hand[4].getRank() == 12) {
+        // suits
+        if (false) {
+            // ranks
+            if  (false) {
                 return true;
             } else {
                 return false;
@@ -48,7 +52,7 @@ public class Hand {
     }
 
     private boolean straight() {
-        if (hand[4].getRank()-hand[3].getRank()==1 && hand[3].getRank()-hand[2].getRank()==1 && hand[2].getRank()-hand[1].getRank()==1 && hand[1].getRank()-hand[0].getRank()==1) {
+        if (false) {
             return true;
         } else {
             return false;
@@ -56,7 +60,7 @@ public class Hand {
     }
 
     private boolean flush() {
-        if (hand[0].getSuit() == hand[1].getSuit() && hand[0].getSuit() == hand[2].getSuit() && hand[0].getSuit() == hand[3].getSuit() && hand[0].getSuit() == hand[4].getSuit()) {
+        if (false) {
             return true;
         } else {
             return false;
@@ -64,7 +68,7 @@ public class Hand {
     }
 
     private boolean fourOfAKind() {
-        if (hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && hand[0].getRank() == hand[3].getRank() || hand[4].getRank() == hand[1].getRank() && hand[4].getRank() == hand[2].getRank() && hand[4].getRank() == hand[3].getRank()) {
+        if (false) {
             return true;
         } else {
             return false;
@@ -72,7 +76,15 @@ public class Hand {
     }
 
     private boolean threeOfAKind() {
-        if (hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && hand[0].getRank() != hand[3].getRank() && hand[0].getRank() != hand[4].getRank() || hand[1].getRank() == hand[2].getRank() && hand[1].getRank() == hand[3].getRank() && hand[1].getRank() != hand[0].getRank() && hand[1].getRank() != hand[4].getRank() || hand[4].getRank() == hand[2].getRank() && hand[4].getRank() == hand[3].getRank() && hand[4].getRank() != hand[0].getRank() && hand[4].getRank() != hand[1].getRank()) {
+        if (false) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean twoPair() {
+        if (false) {
             return true;
         } else {
             return false;
